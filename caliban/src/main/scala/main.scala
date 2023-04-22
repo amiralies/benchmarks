@@ -22,11 +22,8 @@ object CalibanServer extends ZIOAppDefault {
       _ <- Server
         .serve(
           Http
-            .collectRoute[Request] {
-              case _ -> !! / "api" / "graphql" =>
-                ZHttpAdapter.makeHttpService(interpreter)
-              case _ -> !! / "ws" / "graphql" =>
-                ZHttpAdapter.makeWebSocketService(interpreter)
+            .collectRoute[Request] { case _ -> !! / "graphql" =>
+              ZHttpAdapter.makeHttpService(interpreter)
             }
             .withDefaultErrorResponse
         )

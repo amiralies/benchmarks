@@ -157,6 +157,20 @@
         "-jar",
         "./target/scala-2.13/sangria-assembly-0.1.0-SNAPSHOT.jar",
       ]
+- id: caliban
+  name: Caliban
+  url: https://github.com/ghostdogpr/caliban
+  lang: Scala
+  server: ZIO HTTP
+  run:
+    cmd: java
+    args:
+      [
+        "-Xrs",
+        "-Xmx4G",
+        "-jar",
+        "./target/scala-2.13/caliban-assembly-0.1.0-SNAPSHOT.jar",
+      ]
 # - id: static-crystal
 #   name: static-crystal
 #   url: "https://actix.rs/"

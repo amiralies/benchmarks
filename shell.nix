@@ -5,6 +5,7 @@ pkgs.mkShell {
     gmp
     libevent
     pcre
+    pcre.dev
     zlib
     openssl
     rustc
